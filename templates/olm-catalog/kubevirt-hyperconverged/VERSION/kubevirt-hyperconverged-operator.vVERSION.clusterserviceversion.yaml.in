@@ -3,20 +3,21 @@ kind: ClusterServiceVersion
 metadata:
   name: kubevirt-hyperconverged-operator.v{{.CsvVersion}}
   namespace: placeholder
+  containerImage: quay.io/kubevirt/hyperconverged-cluster-operator:latest
   annotations:
     capabilities: "Full Lifecycle"
     categories: "OpenShift Optional"
     certified: "false"
     support: "false"
     repository: https://github.com/kubevirt/hyperconverged-cluster-operator
-    alm-examples: >-
+    alm-examples: |
       [
         {
           "apiVersion": "hco.kubevirt.io/v1alpha1",
           "kind": "HyperConverged",
           "metadata": {
             "name": "kubevirt-hyperconverged",
-            "namespace": "kubevirt-hyperconverged",
+            "namespace": "kubevirt-hyperconverged"
           }{{if .Converged}}
         },
         {
